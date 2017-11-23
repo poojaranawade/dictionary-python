@@ -11,7 +11,7 @@ def translate(entered_word):
     entered_word = entered_word.lower()
     if entered_word in data:
         return data[entered_word]
-    else:
+    elif get_close_matches(entered_word, data.keys()):
         similar_word = get_close_matches(entered_word, data.keys())
         if len(similar_word) > 0:
             for i in similar_word:
@@ -19,9 +19,8 @@ def translate(entered_word):
                 if decision == 'y':
                     return data[i]
             return "Which word is that!"
-        else:
-            print("The word doesn't exist!")
+    else:
+        return "The word doesn't exist!"
 
 
 word = input("enter word: ")
-
