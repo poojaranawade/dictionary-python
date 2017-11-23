@@ -24,4 +24,9 @@ def translate(entered_word):
 
 
 word = input("enter word: ")
-print(translate(word))
+meaning = translate(word)
+if type(meaning) is list:
+    for item in meaning:
+        print(item)
+else:
+    print(meaning)
