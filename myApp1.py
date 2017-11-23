@@ -24,3 +24,4 @@ def translate(entered_word):
 
 
 word = input("enter word: ")
+print(translate(word))
